@@ -4,6 +4,7 @@ defmodule Alice.Handlers.Reddit do
   route   ~r<\breddit me (/?r/)?(.*)\z>,    :random_image_from_subreddit
   command ~r<\breddit( me)? (/?r/)?(.*)\z>, :random_image_from_subreddit
 
+  @doc "`reddit me ____` - gets a random image from your specified subreddit"
   def random_image_from_subreddit(conn) do
     conn
     |> get_term

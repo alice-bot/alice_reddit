@@ -7,6 +7,8 @@ defmodule AliceReddit.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: "Alice does Reddit",
+     package: package,
      deps: deps]
   end
 
@@ -21,5 +23,13 @@ defmodule AliceReddit.Mixfile do
       {:alice, "~> 0.2"},
       {:readit, "~> 0.0"}
     ]
+  end
+
+  defp package do
+    [files: ["lib", "config", "mix.exs", "README*"],
+     maintainers: ["Adam Zaninovich"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/adamzaninovich/alice_reddit",
+              "Docs"   => "https://github.com/adamzaninovich/alice_reddit"}]
   end
 end
