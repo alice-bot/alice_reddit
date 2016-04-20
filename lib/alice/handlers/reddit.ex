@@ -1,4 +1,7 @@
 defmodule Alice.Handlers.Reddit do
+  @moduledoc """
+  Alice does Reddit
+  """
   use Alice.Router
 
   route   ~r<\breddit me (/?r/)?(.*)\z>,    :random_image_from_subreddit
