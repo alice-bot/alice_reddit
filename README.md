@@ -1,5 +1,7 @@
 # AliceReddit
 
+![](https://i.imgflip.com/wadlg.jpg)
+
 **TODO: Add description**
 
 ## Installation
