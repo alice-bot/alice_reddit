@@ -11,7 +11,8 @@ defmodule Alice.Handlers.Reddit do
   def random_image_from_subreddit(conn) do
     conn
     |> get_term
-    |> Readit.random_image_from_sub
+    |> get_post
+    |> build_reply
     |> reply(conn)
   end
 
@@ -21,5 +22,19 @@ defmodule Alice.Handlers.Reddit do
     |> String.downcase
     |> String.replace(~r/[_\s]+/, "")
     |> String.strip
+  end
+
+  defp get_post(name) do
+    name
+    |> Sub.new
+    |> Sub.recent_images
+    |> Enum.random
+  end
+
+  defp build_reply(post) do
+    ["> *#{post.title} • /r/#{post.subreddit}*",
+     "> #{post.score} points and #{post.num_comments} comments so far on reddit",
+     "> #{post.url}"]
+    |> Enum.join("\n")
   end
 end
