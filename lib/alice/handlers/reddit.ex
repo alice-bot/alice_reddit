@@ -26,8 +26,8 @@ defmodule Alice.Handlers.Reddit do
 
   defp get_post(name) do
     name
-    |> Sub.new
-    |> Sub.recent_images
+    |> Readit.Sub.new
+    |> Readit.Sub.recent_images
     |> Enum.random
   end
 
