@@ -27,7 +27,8 @@ defmodule Alice.Handlers.Reddit do
   defp get_post(name) do
     name
     |> Readit.Sub.new
-    |> Readit.Sub.recent_images
+    |> Readit.Sub.hot
+    |> Enum.filter(&Readit.Post.image?/1)
     |> Enum.random
   end
 
