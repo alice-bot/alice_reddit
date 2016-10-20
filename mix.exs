@@ -19,7 +19,6 @@ defmodule AliceReddit.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:websocket_client, github: "jeremyong/websocket_client"},
       {:alice, "~> 0.2"},
       {:readit, ">= 0.0.4"}
     ]
