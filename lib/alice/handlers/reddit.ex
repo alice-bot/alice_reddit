@@ -10,26 +10,26 @@ defmodule Alice.Handlers.Reddit do
   @doc "`reddit me ____` - gets a random image from your specified subreddit"
   def random_image_from_subreddit(conn) do
     conn
-    |> get_term
-    |> get_post
-    |> build_reply
+    |> get_term()
+    |> get_post()
+    |> build_reply()
     |> reply(conn)
   end
 
   defp get_term(conn) do
     conn
-    |> Alice.Conn.last_capture
-    |> String.downcase
+    |> Alice.Conn.last_capture()
+    |> String.downcase()
     |> String.replace(~r/[_\s]+/, "")
-    |> String.strip
+    |> String.trim()
   end
 
   defp get_post(name) do
     name
-    |> Readit.Sub.new
-    |> Readit.Sub.hot
+    |> Readit.Sub.new()
+    |> Readit.Sub.hot()
     |> Enum.filter(&Readit.Post.image?/1)
-    |> Enum.random
+    |> Enum.random()
   end
 
   defp build_reply(post) do
