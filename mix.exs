@@ -19,8 +19,8 @@ defmodule AliceReddit.Mixfile do
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:alice, "~> 0.2"},
-      {:readit, ">= 0.1.0"}
+      {:alice, "~> 0.3"},
+      {:readit, "~> 0.1.0"}
     ]
   end
 
